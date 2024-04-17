@@ -1,0 +1,22 @@
+arr[index]>= x;
+
+
+public class Solution {
+    public static int lowerBound(int []arr, int n, int x) {
+        int low= 0;
+        int high=n-1;
+        int ans=n;
+        
+       // mid= low + (high-low)/2; COMMOM MISTAKE IS THAT U NEED TO CALCULATE MID VALUE IN EACH ITERATION BUT THIS IS NOT HAPPENING WHEN YOU CALCULATE THE MID VALUE OUTSIDE THE WHILE LOOP IT HAS TO BE INSIDE THE LOOP ONLY                                   
+        while(low<=high){
+            mid= low + (high-low)/2;
+            if(a[mid]>=x){
+                ans=mid;
+                high=mid-1;
+            }else{
+                low=mid + 1
+            }
+        }
+         return ans;
+    }
+}
