@@ -8,6 +8,7 @@ public class rope {
         int n=sc.nextInt();
         System.out.println("Enter the a length: ");
         int a=sc.nextInt();
+
         System.out.println("Enter the b length: ");
         int b=sc.nextInt();
         System.out.println("Enter the c length: ");
@@ -29,7 +30,7 @@ public class rope {
       int temp3=ropecut(n-c,a,b,c);
 
      pieces=max(temp1,temp2,temp3);
-
+     //pieces=Math.max(temp1,Math.max(temp2,temp3)); 
      if(pieces==-1) return -1;
 
      return pieces+1;
