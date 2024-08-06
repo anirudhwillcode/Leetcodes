@@ -1,0 +1,105 @@
+What is a Linked List?
+
+A linked list is a linear data structure consisting of a sequence of elements, called nodes, where each node contains a data part and a reference (or link) to the next node in the sequence.
+
+Where is it used?
+
+Linked lists are used in various applications, such as:
+Implementing data structures like stacks and queues.
+Managing dynamic memory allocation.
+Performing operations that require frequent insertion and deletion of elements.
+struct/class in C++ & Java
+
+In c++
+struct Node {
+    int data;
+    Node* next;
+};
+
+
+In Java 
+class Node {
+    int data;
+    Node next;
+}
+             
+Memory Space used
+
+Each node in a linked list requires extra memory for the pointer/reference to the next node, in addition to the memory required for the data.
+Difference between Node & Node*
+
+Node is a single instance of the node structure or class.
+Node* in C++ (or Node reference in Java) is a pointer (or reference) to a node, used to link nodes together in the list.
+Array -> LL
+
+Conversion from an array to a linked list involves creating nodes for each element in the array and linking them together.
+
+C++ Example:
+
+cpp
+
+int arr[] = {1, 2, 3, 4};
+Node* head = new Node{arr[0], nullptr};
+Node* current = head;
+for (int i = 1; i < sizeof(arr)/sizeof(arr[0]); ++i) {
+    current->next = new Node{arr[i], nullptr};
+    current = current->next;
+}
+Java Example:
+
+java
+
+int[] arr = {1, 2, 3, 4};
+Node head = new Node(arr[0]);
+Node current = head;
+for (int i = 1; i < arr.length; i++) {
+    current.next = new Node(arr[i]);
+    current = current.next;
+}
+Traversal in LL
+
+Traversing a linked list involves starting from the head and moving through each node until reaching the end.
+
+C++ Example:
+
+cpp
+
+Node* current = head;
+while (current != nullptr) {
+    std::cout << current->data << " ";
+    current = current->next;
+}
+Java Example:
+
+java
+
+Node current = head;
+while (current != null) {
+    System.out.print(current.data + " ");
+    current = current.next;
+}
+Length of a LL
+
+Finding the length of a linked list involves traversing the list and counting the nodes.
+
+C++ Example:
+
+
+int length = 0;
+Node* current = head;
+while (current != nullptr) {
+    length++;
+    current = current->next;
+}
+std::cout << "Length: " << length;
+
+
+
+Copy code
+int length = 0;
+Node current = head;
+while (current != null) {
+    length++;
+    current = current.next;
+}
+System.out.println("Length: " + length);
