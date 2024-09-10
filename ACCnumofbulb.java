@@ -1,5 +1,5 @@
-package AccentureProblems;
-public class numofbulb {
+
+public class ACCnumofbulb {
     public static void main(String[] args) {
         int n=50;
         int result=countnumofbulb(n);

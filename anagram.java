@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class anagram {
+public staticclass anagram {
     public static void main(String[] args) {
         String s="anagram";
         String t="cat";

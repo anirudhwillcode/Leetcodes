@@ -1,5 +1,5 @@
-package AccentureProblems;
-public class happynumber {
+
+public class ACChappynumber {
     public static void main(String[] args) {
         int n=19;
         int newnum=n;

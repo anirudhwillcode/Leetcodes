@@ -1,5 +1,5 @@
-package AccentureProblems;
-public class leaders {
+
+public class ACCleaders {
     public static int findLeaders(int [] arr){
         int n=arr.length;
         int s=0;

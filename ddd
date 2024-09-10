@@ -1,0 +1,52 @@
+public class VowelsConsonants {
+    public static int Difficulty(char str[], int len) {
+        int c = 0; // counter for consonants
+        int v = 0; // counter for vowels
+        int hard = 0; // counter for hard words
+        int easy = 0; // counter for easy words
+        boolean isContinuous = false; // to check if there are three consecutive consonants
+        int consecutiveConsonants = 0; // to keep track of the number of consecutive consonants
+        int difficultyIndex = 0; // final difficulty index
+
+        for (int i = 0; i < len; i++) {
+            if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u' ||
+                str[i] == 'A' || str[i] == 'E' || str[i] == 'I' || str[i] == 'O' || str[i] == 'U') {
+                v++; // increment vowel count
+                consecutiveConsonants = 0; // reset consecutive consonants count
+            } else if (str[i] != ' ') { // make sure it's a consonant
+                c++;
+                consecutiveConsonants++; // increment consecutive consonants count
+
+                if (consecutiveConsonants == 3) {
+                    isContinuous = true; // set flag if there are three consecutive consonants
+                }
+            }
+
+            if (str[i] == ' ' || i == len - 1) { // handle word end and final word
+                if (isContinuous || c > v) {
+                    hard++;
+                } else {
+                    easy++;
+                }
+                
+                // Reset counters for the next word
+                c = 0;
+                v = 0;
+                isContinuous = false;
+                consecutiveConsonants = 0;
+            }
+        }
+
+        difficultyIndex = (5 * hard) - (2 * easy); // calculate the difficulty index
+
+        return difficultyIndex; // return the calculated difficulty index
+    }
+
+    public static void main(String[] args) {
+        String input = "qlewldoaa life ace by fantasy";
+        char str[] = input.toCharArray(); // convert the input string to a char array
+        int len = input.length(); // get the length of the input string
+        int result = Difficulty(str, len); // call the Difficulty function
+        System.out.println("The difficulty index is: " + result); // print the result
+    }
+}

@@ -1,5 +1,5 @@
-package AccentureProblems;
-public class perfectsquare {
+
+public class ACCperfectsquare {
     public static void main(String[] args) {
         int a[]={64,16,38,81,50,100};
         int count=0;
